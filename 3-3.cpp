@@ -1,5 +1,5 @@
 #include <iostream>
-#include <locale>
+#include <clocale>
 using namespace std;
 //В массиве размера N, заполненного случ.числами от 0 до 10, определить максимальную длину последовательности равных элементов.
 int linearMeasurement(int a[], int N)
