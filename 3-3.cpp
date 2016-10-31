@@ -40,7 +40,7 @@ void printArray(int a[], int N)
 }
 int main()
 {
-	setlocale(LC_ALL, "Russian");
+	setlocale(LC_ALL," ");
 	int const N = 10;
 	int a[N];
 	createArray(a, N);
