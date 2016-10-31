@@ -45,6 +45,6 @@ int main()
 	int a[N];
 	createArray(a, N);
 	printArray(a, N);
-	cout <<"Ìàêñèìàëüíàÿ äëèíà=" << linearMeasurement(a, N)<<'\n';
+	cout <<"Максимальная длина= " << linearMeasurement(a, N)<<'\n';
 	system("pause");
 }
