@@ -11,18 +11,18 @@ int isEmpty(int&top)
 		return true;
 	else return false;
 }
-int  pushStack(int top,char check[],char stack[],int i)
+int  push(int top,char stack[],char check[],int j)
 {
 	if (top==10) 
 		return false;
 	else
 	{
-		stack[top]=check[i];
+		stack[top]=check[j];
 		top++;
 		return true;
 	}
 }
-int popStack(int&top, char stack[] )
+int pop(int&top, char stack[] )
 {
 	if (top<0)
 		return false;
