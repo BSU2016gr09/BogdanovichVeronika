@@ -9,7 +9,8 @@ int isEmpty(int&top)
 {
 	if (top==0) 
 		return true;
-	else return false;
+	else 
+		return false;
 }
 int  push(int top,char stack[],char check[],int j)
 {
@@ -52,6 +53,7 @@ int main()
 	testCheck(check, MaxSize, top, st);
 	if (isEmpty(top)) 
 	cout << "верно";
-	else cout << "неверно";
+	else 
+	cout << "неверно";
 	system("pause");
 }
