@@ -34,10 +34,10 @@ void testCheck(char check[], int MaxSize, int top, char st[])
 	int i=0;
 	while (i<MaxSize)
 	{
-		if (check[i] =='['||check[i]=='{'||check[i]=='(') 
+		if (check[i]=='['||check[i]=='{'||check[i]=='('||check[i]=='[') 
 			pushStack(top, check, st, i);
 		else
-			if (check[i]==']'||check[i]=='}'||check[i]==']')
+			if (check[i]==']'||check[i]=='}'||check[i]==')'||check[i]==']')
 				popStack(top, st);
 			else;
 			i++;
@@ -47,11 +47,11 @@ void testCheck(char check[], int MaxSize, int top, char st[])
 int main()
 {
 	setlocale(LC_ALL,"");
-	char check[] = "(aa[b(c)ddd]e{ee})", st[10];
+	char check[]="(aa[b(c)ddd]e{ee})", st[10];
 	int MaxSize=strlen(check),top=0;
 	testCheck(check, MaxSize, top, st);
 	if (isEmpty(top)) 
-		cout << "верно";
+	cout << "верно";
 	else cout << "неверно";
 	system("pause");
 }
