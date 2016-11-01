@@ -29,16 +29,16 @@ int pop(int&top, char stack[] )
 	else 
 		return stack[top--];
 }
-void testCheck(char check[], int MaxSize, int top, char st[])
+void testCheck(char check[], int MaxSize, int top, char str[])
 {
 	int i=0;
 	while (i<MaxSize)
 	{
 		if (check[i]=='['||check[i]=='{'||check[i]=='('||check[i]=='[') 
-			pushStack(top, check, st, i);
+			push(top, check, str, i);
 		else
 			if (check[i]==']'||check[i]=='}'||check[i]==')'||check[i]==']')
-				popStack(top, st);
+				pop(top, str);
 			else;
 			i++;
 	}
