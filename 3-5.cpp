@@ -1,10 +1,10 @@
 #include <iostream>
 #include <clocale>
 using namespace std;
-//В программе задана последовательность из открывающихся и закрывающихся скобочек 3 видов. 
-//Например, char test[]="(aa[b(c)ddd]e{ee})"; Проверить правильность растановки скобок в этом выражении 
-//c помощью стека в котором хранятся char. Чтобы использовать очередной элемент строки (aa[b(c)ddd]e{ee})
-//достаточно написать test[0], test[1] ит..д. т.е. в цикле test[i].
+//Р’ РїСЂРѕРіСЂР°РјРјРµ Р·Р°РґР°РЅР° РїРѕСЃР»РµРґРѕРІР°С‚РµР»СЊРЅРѕСЃС‚СЊ РёР· РѕС‚РєСЂС‹РІР°СЋС‰РёС…СЃСЏ Рё Р·Р°РєСЂС‹РІР°СЋС‰РёС…СЃСЏ СЃРєРѕР±РѕС‡РµРє 3 РІРёРґРѕРІ. 
+//РќР°РїСЂРёРјРµСЂ, char test[]="(aa[b(c)ddd]e{ee})"; РџСЂРѕРІРµСЂРёС‚СЊ РїСЂР°РІРёР»СЊРЅРѕСЃС‚СЊ СЂР°СЃС‚Р°РЅРѕРІРєРё СЃРєРѕР±РѕРє РІ СЌС‚РѕРј РІС‹СЂР°Р¶РµРЅРёРё 
+//c РїРѕРјРѕС‰СЊСЋ СЃС‚РµРєР° РІ РєРѕС‚РѕСЂРѕРј С…СЂР°РЅСЏС‚СЃСЏ char. Р§С‚РѕР±С‹ РёСЃРїРѕР»СЊР·РѕРІР°С‚СЊ РѕС‡РµСЂРµРґРЅРѕР№ СЌР»РµРјРµРЅС‚ СЃС‚СЂРѕРєРё (aa[b(c)ddd]e{ee})
+//РґРѕСЃС‚Р°С‚РѕС‡РЅРѕ РЅР°РїРёСЃР°С‚СЊ test[0], test[1] РёС‚..Рґ. С‚.Рµ. РІ С†РёРєР»Рµ test[i].
 int isEmpty(int&top)
 {
 	if (top==0) 
@@ -29,10 +29,10 @@ int popStack(int&top, char stack[] )
 	else 
 		return stack[top--];
 }
-void testCheck(char check[], int m, int top, char st[])
+void testCheck(char check[], int MaxSize, int top, char st[])
 {
 	int i=0;
-	while (i<m)
+	while (i<MaxSize)
 	{
 		if (check[i] =='['||check[i]=='{'||check[i]=='(') 
 			pushStack(top, check, st, i);
@@ -48,10 +48,10 @@ int main()
 {
 	setlocale(LC_ALL,"");
 	char check[] = "(aa[b(c)ddd]e{ee})", st[10];
-	int m=strlen(check),top=0;
-	testCheck(check, m, top, st);
+	int MaxSize=strlen(check),top=0;
+	testCheck(check, MaxSize, top, st);
 	if (isEmpty(top)) 
-		cout << "верно";
-	else cout << "неверно";
+		cout << "РІРµСЂРЅРѕ";
+	else cout << "РЅРµРІРµСЂРЅРѕ";
 	system("pause");
 }
