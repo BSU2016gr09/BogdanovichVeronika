@@ -9,6 +9,7 @@ void printA(int A[], int N);
 void inputArray(int A[], int N);
 void printNumber(int A[], int N);
 void sum(int A[],int B[], int C[],int N);
+void dif(int A[],int B[],int D[],int N)
 using namespace std;
 int main()
 {
@@ -27,6 +28,8 @@ printNumber(B,maxCount);
 
 sum(A,B,C,maxCount);
 printNumber(C,maxCount);
+dif(A,B,D,maxCount);
+printNumber(D,maxCount);
 system("pause");
 }
 void sum(int A[],int B[], int C[], int N)
@@ -38,6 +41,23 @@ void sum(int A[],int B[], int C[], int N)
 	   tmp=C[i]/10;
 	   C[i]=C[i]%10;
 	 }
+}
+void dif(int A[], int B[],int D[], int N)
+{
+
+   int i=0;
+	while (i<N)
+	{
+		if (A[i]>=B[i])
+			D[i]=A[i]-B[i];
+		else 
+		{ 
+			D[i]=A[i]-B[i];
+			A[i+1]=A[i+1]-1; 
+			A[i]=A[i]+10;
+		}
+		i++;
+	}
 }
 void initA(int A[], int N)
 {
