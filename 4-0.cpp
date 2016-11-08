@@ -2,6 +2,7 @@
 #include <math.h>
 #include <iomanip>
 using namespace std;
+// Построить график функции y=sin(2x)/x на промежутке [-6,6] с шагом 0.1
 void drawGraph ()
 {
 	float x=-6,y;
