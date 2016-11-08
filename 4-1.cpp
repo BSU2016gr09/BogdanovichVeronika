@@ -1,6 +1,8 @@
 #include <iostream>
 #include <clocale>
 #include <ctime>
+//Реализовать операции целочисленной арифметики на массивах размера MAX_SIZE=100 (глобальная константа). 
+//В цикле вычислить максимальное возможное на этих массивах число Фибоначчи 1,1,2,3,....
 void initA(int A[],int N);
 void initA(int A[], int N,int k);
 void printA(int A[], int N);
