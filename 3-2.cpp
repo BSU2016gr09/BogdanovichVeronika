@@ -15,7 +15,7 @@ void createArray(int a[], int N)
 void printArray(int a[], int N)
 {
 	int i=0;
-	while (i<10)
+	while (i<10)//Ай,ай, ай  тут не 10 надо
 	{
 		cout<<"a["<<i<<"]="<<a[i]<<'\n';
 		i++;
