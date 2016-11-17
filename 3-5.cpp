@@ -38,7 +38,7 @@ void testCheck(char check[], int MaxSize, int top, char str[])
 		if (check[i]=='['||check[i]=='{'||check[i]=='('||check[i]=='[') 
 			push(top, check, str, i);
 		else
-			if (check[i]==']'||check[i]=='}'||check[i]==')'||check[i]==']')
+			if (check[i]==']'||check[i]=='}'||check[i]==')'||check[i]==']') // не вижу никакой проверки, что закрывающая скобка соответствует открывающей!!! Т.е. как ты проверяешь, что может быть ситуация {cc(ааа]c}
 				pop(top, str);
 			else;
 			i++;
