@@ -22,7 +22,7 @@ while (i<N)
 	i++;
 }
 }
-void doRandom2(int b[], int M)
+void doRandom2(int b[], int M)//ты, верно, шутишь? И чем эта ф-ция отличается от doRandom1 ?????
 {
 	int j=0;
 	while(j < M)
@@ -31,7 +31,7 @@ void doRandom2(int b[], int M)
 		j++;
 	}
 }
-void printArray2 (int b[], int M)
+void printArray2 (int b[], int M)//ты, верно, шутишь? И чем эта ф-ция отличается от printArray1 ?????
 {
 int j=0;
 while (j<M)
