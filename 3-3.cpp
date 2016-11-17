@@ -16,7 +16,7 @@ int linearMeasurement(int a[], int N)
 					m=l;
 			j++;
 		}
-		i=i+l;
+		i=i+l;//тут i+1 или i+l? я не понял... Подойди и поясни алгоритм...
 	}
 	return m;
 }
