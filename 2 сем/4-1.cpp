@@ -1,4 +1,4 @@
-//
+//Определить количество слов в строке, которые начинаются на заданную букву.
 #include <iostream> 
 #include <cstdlib> 
 #include <cstring> 
