@@ -10,19 +10,19 @@ void give_memory(int *&, int);
 void printArray(int **, int, int);
 void initArray(int **, int, int);
 void delete_memory(int**, int);
-void delete_memory(int*);
+void delete_memory(int*); // Просто СУПЕР функция )))))
 int findMax(int *, int);
 void sortArray(int **, int *, int, int);
 void saveMax(int **, int *, int, int);
-int rand0m();
+int rand0m();// Хвалю за название
 
 int main(){
     setlocale(LC_ALL,"");
     int M;
     int N;
-    cout << "������� ������: ";
+    cout << "Ââåäèòå âûñîòó: ";
     cin >> N;
-    cout << "������� ������: ";
+    cout << "Ââåäèòå øèðèíó: ";
     cin >> M;
     int** arr;
     int * maxArr;
@@ -34,8 +34,8 @@ int main(){
     printArray(arr, N, M);
     delete_memory(arr, N);
     delete_memory(maxArr);
-    arr = nullptr;
-    maxArr = nullptr;
+    arr = nullptr;//Молодец!!!!
+    maxArr = nullptr;//Молодец!!!!
 	system ("pause");
     }
 
@@ -82,7 +82,7 @@ void saveMax(int ** arr, int * maxArr, int N, int M){
 }
 
 void give_memory(int *& maxArr, int N){
-    maxArr = new int [N];
+    maxArr = new int [N];//Где проверка?????
 }
 
 void give_memory(int ** &arr, int N, int M){
@@ -93,7 +93,7 @@ void give_memory(int ** &arr, int N, int M){
         }
     }
     catch (...) {
-        cout << "������ �� ���������� ";
+        cout << "Ïàìÿòü íå âûäåëèëàñü ";
         exit(0);
     }
 }
@@ -125,5 +125,5 @@ void delete_memory(int** arr, int N) {
 }
 
 void delete_memory(int * arr){
-    delete [] arr;
+    delete [] arr;// Просто СУПЕР функция )))))
 }
