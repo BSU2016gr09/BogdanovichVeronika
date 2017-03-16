@@ -1,7 +1,7 @@
 #include <iostream> 
 #include <new>
 using namespace std;
-//–‡ÒÔÓÎÓÊËÚ¸ ‚ ÔÓˇ‰ÍÂ ‚ÓÁ‡ÒÚ‡ÌËˇ ˝ÎÂÏÂÌÚ˚ Ï‡ÒÒË‚‡ ¿(N), Ì‡˜ËÌ‡ˇ Ò k-„Ó ˝ÎÂÏÂÌÚ‡
+//√ê√†√±√Ø√Æ√´√Æ√¶√®√≤√º √¢ √Ø√Æ√∞√ø√§√™√• √¢√Æ√ß√∞√†√±√≤√†√≠√®√ø √Ω√´√•√¨√•√≠√≤√ª √¨√†√±√±√®√¢√† √Ä(N), √≠√†√∑√®√≠√†√ø √± k-√£√Æ √Ω√´√•√¨√•√≠√≤√†
 void enterArray(int* pa, int N);
 void printArray(int* pa, int N);
 void sortArray(int* pa, int N);
@@ -44,5 +44,5 @@ void sortArray(int* pa, int N)
 	cin >> b;
 	for (; b < N; b++)
 		for (int j=b; j < N; j++)
-			if (*(pa + b) > *(pa + j)) swap(*(pa + b),*(pa + j));
+			if (*(pa + b) > *(pa + j)) swap(*(pa + b),*(pa + j)); //—á—Ç–æ –∑–∞ –∫–æ–ª—Ö–æ–∑–Ω–∞—è —Å–æ—Ä—Ç–∏—Ä–æ–≤–∫–∞
 }
