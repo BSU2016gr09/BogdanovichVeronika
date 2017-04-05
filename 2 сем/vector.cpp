@@ -9,7 +9,7 @@ struct Vector10 {
 public:
     float x[10];
 
-    void calcLen() { (*this).len = sqrt(
+    void calcLen() { (*this).len = sqrt(//БЫДЛОКОД не принимаю. Пиши циклы!!!!
                 this->x[0] * x[0] + this->x[1] * x[1] + this->x[2] * x[2] + this->x[3] * x[3] + this->x[4] * x[4] +
                 this->x[5] * x[5] + this->x[6] * x[6] + this->x[7] * x[7] + this->x[8] * x[8] + this->x[9] * x[9]);
     }
