@@ -9,10 +9,24 @@ using namespace std;
 struct Vector100 {
 private:
     float len;
-    float len2;
 
 public:
     float x[100];
+	Vector100(){
+		for(int i = 0; i < 100; i++) x[i] = 1;
+		cout << "Работает конструктор по умолчанию\n"; 
+	}
+	~Vector100(){
+		cout << "Работает деструктор по умолчанию\n";
+	}
+	Vector100& operator+(Vector100 & other){
+		Vector100 * rez = new Vector100;
+		for(int i = 0; i < 100; i++){
+			rez->x[i] = this->x[i] + other.x[i];
+		}
+        rez->calcLen();
+        return *rez;
+	}
 
     void calcLen() { 
 		this->len = 0;
@@ -29,18 +43,6 @@ public:
         cout << "len = " << len << endl;
     }
 
-    Vector100 sum(Vector100 other) {
-        Vector100 rez;
-		for(int i = 0; i < 100; i++){
-			rez.x[i] = this->x[i] + other.x[i];
-		}
-        rez.calcLen();
-        return rez;
-    }
-
-    Vector100 sum2(Vector100 other) {
-        Vector100 rez;
-    }
 
 };
 
@@ -48,15 +50,26 @@ int main() {
     setlocale(LC_ALL, "Russian");
 	srand(time(NULL));
     int m(2), n = m, p = n + m;
-    Vector100 a, b, c;
+    Vector100 a, b, c, f;
     for(int i = 0; i < 100; i++){
 		a.x[i] = rand() % 5 + 1;
 	}
+
+	Vector100 * d = new Vector100;
+	Vector100 * e = new Vector100;
+	*e = a;
+
     a.calcLen();
     a.printVector();
     b = a;
     b.printVector();
-    c = a.sum(b);
+	cout << "\n\n\n";
+    c = a + b;
     c.printVector();
-    system("pause");
+	cout << "\n\n\n";
+	f = *e + *d;
+	f.printVector();
+	delete e;
+	delete d;
+	system("pause");
 }
