@@ -1,4 +1,4 @@
-#include <iostream>
+#include <iostream>//А где версия, которую мы вместе делали????
 #include <clocale>
 #include <math.h>
 #include <cstdlib>
