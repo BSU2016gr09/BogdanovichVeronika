@@ -17,12 +17,12 @@ void saveMax(int **, int *, int, int);
 int rand0m();// Хвалю за название
 
 int main(){
-    setlocale(LC_ALL,"");
+    setlocale(LC_ALL,"Russian");
     int M;
     int N;
-    cout << "Ââåäèòå âûñîòó: ";
+    cout << "Введите ширину: ";
     cin >> N;
-    cout << "Ââåäèòå øèðèíó: ";
+    cout << "Введите высоту: ";
     cin >> M;
     int** arr;
     int * maxArr;
@@ -82,7 +82,7 @@ void saveMax(int ** arr, int * maxArr, int N, int M){
 }
 
 void give_memory(int *& maxArr, int N){
-    maxArr = new int [N];//Где проверка?????
+    maxArr = new int [N];
 }
 
 void give_memory(int ** &arr, int N, int M){
@@ -93,7 +93,7 @@ void give_memory(int ** &arr, int N, int M){
         }
     }
     catch (...) {
-        cout << "Ïàìÿòü íå âûäåëèëàñü ";
+        cout << "Память не выделилась ";
         exit(0);
     }
 }
