@@ -36,13 +36,12 @@ while (i <N)
 	i++;
 }
 }
-
-void sortArray(int* pa, int N)
+void sortArray(int * A, int N)
 {
-	cout << "Enter index of element from which we will sort = ";
-	int b;
-	cin >> b;
-	for (; b < N; b++)
-		for (int j=b; j < N; j++)
-			if (*(pa + b) > *(pa + j)) swap(*(pa + b),*(pa + j)); //что за колхозная сортировка
+    int k;
+	cout << "\nEnter index of element from which we will sort = ";
+	cin >> k;
+	for (int i = k; i < N - 1; i++){
+       		for (int j = k; j < N - 1; j++){ if (*(A + j) > *(A + j + 1)) swap(*(A + j), *(A + j + 1));  }
+    }
 }
