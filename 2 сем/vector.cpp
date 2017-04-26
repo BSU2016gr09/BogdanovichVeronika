@@ -1,27 +1,52 @@
-#include <iostream>//Рђ РіРґРµ РІРµСЂСЃРёСЏ, РєРѕС‚РѕСЂСѓСЋ РјС‹ РІРјРµСЃС‚Рµ РґРµР»Р°Р»Рё????
+#include <iostream>
 #include <clocale>
 #include <math.h>
 #include <cstdlib>
 #include <ctime>
-
+ const int N=100;
 using namespace std;
 
-struct Vector100 {
+struct Vector {
 private:
     float len;
-
+    float x[N];
 public:
-    float x[100];
-	Vector100(){
-		for(int i = 0; i < 100; i++) x[i] = 1;
-		cout << "Р Р°Р±РѕС‚Р°РµС‚ РєРѕРЅСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ\n"; 
+
+	Vector(){
+		for(int i = 0; i < N; i++) x[i] = 0;
+		cout << "Работает конструктор по умолчанию\n"; 
 	}
-	~Vector100(){
-		cout << "Р Р°Р±РѕС‚Р°РµС‚ РґРµСЃС‚СЂСѓРєС‚РѕСЂ РїРѕ СѓРјРѕР»С‡Р°РЅРёСЋ\n";
+	Vector(float a[N]){
+		for(int i = 0; i < N; i++) x[i] = a[i];
+		cout << "Работает конструктор с параметрами\n"; 
 	}
-	Vector100& operator+(Vector100 & other){
-		Vector100 * rez = new Vector100;
-		for(int i = 0; i < 100; i++){
+	Vector(float a){
+		for(int i = 0; i < N; i++) x[i] = a;
+		cout << "Работает конструктор с параметром числом\n"; 
+	}
+	Vector(Vector & other){
+				for(int i = 0; i < N; i++){	this->x[i] = other.x[i];}
+		cout<<"Работает конструктор копирования\n";
+        return *this;
+	}
+	~Vector(){
+		cout << "Работает деструктор по умолчанию\n";
+	}
+		Vector& operator=(Vector & other){
+		for(int i = 0; i < N; i++){	this->x[i] = other.x[i];}
+		cout<<"Работает оператор присваивания\n";
+        
+        return *this;
+	}
+			Vector& operator=(float & f){
+		for(int i = 0; i < N; i++){	this->x[i] = f;}
+		cout<<"Работает оператор присваивания\n";
+        
+        return *this;
+	}
+	Vector& operator+(Vector & other){
+		Vector * rez = new Vector;
+		for(int i = 0; i < N; i++){
 			rez->x[i] = this->x[i] + other.x[i];
 		}
         rez->calcLen();
@@ -30,16 +55,16 @@ public:
 
     void calcLen() { 
 		this->len = 0;
-		for(int i = 0; i < 100; i++){
+		for(int i = 0; i < N; i++){
 			this->len += x[i]*x[i];
 		}
 		this->len = sqrt(this->len);
     }
 
     void printVector() {
-        cout << "(" << x[0] << ";";
-        for (int i = 1; i < 99; i++) { cout << x[i] << ";"; }
-        cout << x[99] << "); ";
+        cout << "(" ;
+        for (int i =0; i < N; i++) { cout << x[i] << ";"; }
+        cout  << "); ";
         cout << "len = " << len << endl;
     }
 
@@ -48,15 +73,19 @@ public:
 
 int main() {
     setlocale(LC_ALL, "Russian");
-	srand(time(NULL));
-    int m(2), n = m, p = n + m;
-    Vector100 a, b, c, f;
-    for(int i = 0; i < 100; i++){
-		a.x[i] = rand() % 5 + 1;
-	}
+	srand(time(NULL));\
 
-	Vector100 * d = new Vector100;
-	Vector100 * e = new Vector100;
+    Vector a;//Вызывается конструктор по умолчанию
+	float arr[N];
+    for(int i = 0; i < N; i++){
+		arr[i] = rand() % 5 + 1;
+	}
+	Vector b;b=1;//Вызывается конструктор по умолчанию и затем оператор равно
+	Vector c(2);//Вызывается конструктор с параметром - числом
+	Vector f(arr);//Вызывается конструктор с параметром - массивом
+	Vector j(f);//Вызывается конструктор с параметром - вектором
+	Vector * d = new Vector;
+	Vector * e = new Vector;
 	*e = a;
 
     a.calcLen();
