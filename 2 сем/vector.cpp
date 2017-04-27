@@ -3,7 +3,7 @@
 #include <math.h>
 #include <cstdlib>
 #include <ctime>
- const int N=100;
+ const int N=5;
 using namespace std;
 
 struct Vector {
@@ -13,7 +13,7 @@ private:
 public:
 
 	Vector(){
-		for(int i = 0; i < N; i++) x[i] = 0;
+		for(int i = 0; i < N; i++) {x[i] = 0; len=0;}
 		cout << "Работает конструктор по умолчанию\n"; 
 	}
 	Vector(float a[N]){
@@ -22,26 +22,25 @@ public:
 	}
 	Vector(float a){
 		for(int i = 0; i < N; i++) x[i] = a;
-		cout << "Работает конструктор с параметрами \n"; 
+		cout << "Работает конструктор с параметром \n"; 
 	}
 	Vector(Vector & other){
 				for(int i = 0; i < N; i++){	this->x[i] = other.x[i];}
-		cout<<"Работает конструктор\n";
-        return *this;
+		cout<<"Работает конструктор копирования\n";
 	}
 	~Vector(){
 		cout << "Работает деструктор по умолчанию\n";
 	}
-		Vector& operator=(Vector & other){
+	Vector& operator=(Vector & other){
 		for(int i = 0; i < N; i++){	this->x[i] = other.x[i];}
 		cout<<"Работает оператор присваивания\n";
-        
+        calcLen();
         return *this;
 	}
-			Vector& operator=(float & f){
-		for(int i = 0; i < N; i++){	this->x[i] = f;}
+	Vector& operator=(float & f){
+		for(int i = 0; i < N; i++){	this->x[i] = f; }
 		cout<<"Работает оператор присваивания\n";
-        
+        calcLen();
         return *this;
 	}
 	Vector& operator+(Vector & other){
@@ -49,6 +48,16 @@ public:
 		for(int i = 0; i < N; i++){
 			rez->x[i] = this->x[i] + other.x[i];
 		}
+		cout<<"Работает оператор +\n";
+        rez->calcLen();
+        return *rez;
+	}
+	Vector& operator*(Vector & other){
+		Vector * rez = new Vector;
+		for(int i = 0; i < N; i++){
+			rez->x[i] = this->x[i] * other.x[i];
+		}
+		cout<<"Работает оператор *\n";
         rez->calcLen();
         return *rez;
 	}
@@ -73,14 +82,14 @@ public:
 
 int main() {
     setlocale(LC_ALL, "Russian");
-	srand(time(NULL));\
+	srand(time(NULL));
 
     Vector a;
 	float arr[N];
     for(int i = 0; i < N; i++){
 		arr[i] = rand() % 5 + 1;
 	}
-	Vector b;b=1;
+	Vector b=1.0;
 	Vector c(2);
 	Vector f(arr);
 	Vector j(f);
@@ -100,5 +109,6 @@ int main() {
 	f.printVector();
 	delete e;
 	delete d;
+
 	system("pause");
 }
